@@ -1,0 +1,12 @@
+CC=gcc
+CFLAGS=-I.
+DEPS = apue.h
+OBJ1 = times1.o
+OBJ2 = error.o
+OBJ3 = prexit.o
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+times1: $(OBJ1) $(OBJ2) $(OBJ3)
+	gcc -o $@ $^ $(CFLAGS)

@@ -1,0 +1,10 @@
+CC=gcc
+CFLAGS=-I.
+DEPS = apue.h
+OBJ = simple-sh.o
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+simple-sh: $(OBJ)
+	gcc -o $@ $^ $(CFLAGS)

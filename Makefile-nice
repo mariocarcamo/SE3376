@@ -1,0 +1,11 @@
+CC=gcc
+CFLAGS=-I.
+DEPS = apue.h
+OBJ1 = nice.o
+OBJ2 = error.o
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+nice: $(OBJ1) $(OBJ2) 
+	gcc -o $@ $^ $(CFLAGS)
